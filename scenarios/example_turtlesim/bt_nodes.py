@@ -2,8 +2,8 @@ import math
 from modules.base_bt_nodes import BTNodeList, Status, Node, Sequence, Fallback, ReactiveSequence, ReactiveFallback
 # BT Node List
 CUSTOM_ACTION_NODES = [
-    'MoveToTarget',
-    'KillTarget',
+    'MoveToGoal',
+    'CaptureImage',
     'ExecuteTask',
     'Explore'
 ]
@@ -56,7 +56,7 @@ from action_msgs.msg import GoalStatus
 from geometry_msgs.msg import PoseStamped
 from nav2_msgs.action import NavigateToPose
 
-class MoveToTarget(ActionWithROSAction):
+class MoveToGoal(ActionWithROSAction):
     def __init__(self, name, agent):
         ns = agent.ros_namespace or ""  # 네임스페이스 없으면 루트
         super().__init__(name, agent, 
@@ -120,7 +120,7 @@ class MoveToTarget(ActionWithROSAction):
 
 from turtlesim.srv import Kill  # turtlesim 표준 서비스
 
-class KillTarget(ActionWithROSService):
+class CaptureImage(ActionWithROSService):
     """
     turtlesim의 /kill 서비스를 호출해 target 거북이를 제거.
     - 기본 대상 이름: 'turtle_target'
