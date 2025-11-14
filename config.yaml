@@ -1,8 +1,8 @@
-scenario: scenarios.example_turtlesim
+scenario: scenarios.nav2_turtlebot3
 
 agent:
-  namespaces: "/turtle1"
-  behavior_tree_xml: "default_bt.xml"
+  namespaces: "" 
+  behavior_tree_xml: "nav2_bt.xml"
 
 bt_runner:
   bt_tick_rate: 10.0 

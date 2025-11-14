@@ -5,3 +5,4 @@ imageio
 pandas
 matplotlib
 seaborn
+opencv-python
