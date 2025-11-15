@@ -47,7 +47,7 @@ python3 main.py
 ### 3단계: 목표 지점 설정
 
 **방법 1: Rviz에서 2D Goal Pose 사용 (2D Goal Pose 추가 필요)**
-
+```panel -> tool properties -> 2D goal_pose/topic -> goal_pose를 /bt/goal_pose로 변경경```
 
 
 ### 4단계: Behavior Tree 동작 확인 (pygamewindow 확인)
@@ -109,6 +109,17 @@ ros2 topic list | grep camera
 ros2 topic echo /amcl_pose --once
 ros2 topic echo /odom --once
 ```
+
+### 문제 5: pygame 설치 문제
+
+**원인:** main.py 실행 시 pygame module을 찾지 못
+
+**확인:**
+```bash
+python3 main.py
+Traceback (most recent call last): File "/home/hanjuntae/webots_ros2_ws/py_bt_ros/main.py", line 15, in <module> from modules.bt_runner import BTRunner File "/home/hanjuntae/webots_ros2_ws/py_bt_ros/modules/bt_runner.py", line 2, in <module> import pygame ModuleNotFoundError: No module named 'pygame'
+```
+**해결:** pip3 install pygame
 
 ## 파일 구조
 
