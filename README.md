@@ -42,6 +42,7 @@ ros2 launch webots_ros2_turtlebot robot_launch.py nav:=true
 cd ~/py_bt_ros
 
 # py_bt_ros 실행
+pip3 install pygame
 python3 main.py
 ```
 
@@ -49,7 +50,15 @@ python3 main.py
 ### 3단계: 목표 지점 설정
 
 **방법 1: Rviz에서 2D Goal Pose 사용 (2D Goal Pose 추가 필요)**
+```bash
+panels -> tool properties -> 2D goal_pose의 Topic에서 /goal_pose 를 /bt/goal_pose로 수정
 
+# 새로운 터미널을 열고
+cd ~webots_ros2_ws
+ros2 topic list
+
+/bt/goal_pose Topic확인 가능
+```
 
 
 ### 4단계: Behavior Tree 동작 확인 (pygamewindow 확인)
